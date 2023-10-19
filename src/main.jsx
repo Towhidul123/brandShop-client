@@ -12,6 +12,9 @@ import Root from './Components/Root';
 import Error from './Components/Error';
 import Home from './Components/Home';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import Login from './Components/Login';
+import Register from './Components/Register';
+import AuthProvider from './Components/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: "Update",
         element: <Update></Update>,
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
 
     ]
@@ -43,10 +54,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    
-    <ParallaxProvider>
-      <RouterProvider router={router} />
-    </ParallaxProvider>
-
+    <AuthProvider>
+      <ParallaxProvider>
+        <RouterProvider router={router} />
+      </ParallaxProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )

@@ -1,7 +1,12 @@
 import { Rating } from "@material-tailwind/react";
 import { useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const AddProducts = () => {
+
+
+
 
     const [rating, setRating] = useState(0);
 
@@ -25,14 +30,32 @@ const AddProducts = () => {
 
         const newProducts = { name, BrandName, Type, Price, ShortDescription, rating, image }
         console.log(newProducts)
+
+        //send data to server
+
+        fetch('http://localhost:5000/product', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(newProducts)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    toast.success('Successfully Added!')
+                }
+            })
+
     }
 
 
 
     return (
         <div>
-
-            <form onSubmit={handleAdd}>
+            <Toaster position="top-right" reverseOrder={false}
+            />  <form onSubmit={handleAdd}>
                 <div className="relative z-0 w-full mb-6 group">
                     <input type="text " name="image" id="image" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                     <label htmlFor="image" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Image</label>
