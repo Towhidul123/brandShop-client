@@ -1,3 +1,4 @@
+import { Rating } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
@@ -32,13 +33,14 @@ const ProductCard = ({ product }) => {
                         ${Price}
                     </p>
                     <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                        Rating: {rating}
+                    <Rating name="rating" value={rating}  />
                     </p>
                 </div>
 
 
 
                 <div className="p-6 pt-0">
+                <Link to={`/update/${_id}`}>
                     <button
                         className="select-none rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         type="button"
@@ -46,6 +48,8 @@ const ProductCard = ({ product }) => {
                     >
                         Update
                     </button>
+                    </Link>
+
                     <Link to={`/product/${_id}`}>
                         <button
                             className="select-none rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"

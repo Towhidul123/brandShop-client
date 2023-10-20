@@ -8,6 +8,7 @@ const BrandCard = ({ card }) => {
 
 
     return (
+        <Link to={`/products/${name}`}>
         <div>
             <div className="flex items-center justify-center object-center ">
                 <div className="relative flex w-[312px] flex-col rounded-xl  ">
@@ -16,19 +17,20 @@ const BrandCard = ({ card }) => {
                     </div>
 
                     <div>
-                        <p className="block text-lg font-semibold  ">
+                        <p className="block text-lg font-semibold text-center ">
                             {name}
                         </p>
                     </div>
 
                     <div className="mt-auto">
-                        <Link to={`/products/${name}`}>
-                            <button className="btn btn-primary">View Products</button>
-                        </Link>
+                       
+                           
+                       
                     </div>
                 </div>
             </div>
         </div>
+        </Link>
     );
 };
 
