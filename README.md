@@ -1,8 +1,27 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Product Listing Page
+Display a list of available products with details (name, price, image, etc.).
+Implement pagination or infinite scrolling for better user experience.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-Add to Cart Page
+Enable users to add products to their shopping cart.
+Display a summary of the items in the cart including quantity, price, and total.
+Allow users to adjust quantities or remove items from the cart.
+Calculate and display the total cost of the items in the cart.
+
+-User Authentication and Authorization:
+Implement user registration and login functionalities.
+
+Define user roles  and implement role-based access control for certain functionalities (e.g., product update/delete).
+
+-Product Update:
+Provide an interface for authorized users  to update product information (e.g., name, description, price, etc.).
+Implement form validation to ensure accurate and valid data entry.
+Update the product details in the database and reflect the changes in the UI.
+
+-Product Deletion:
+Allow authorized users  to remove products from the inventory.
+Implement confirmation dialogs or prompts to prevent accidental deletions.
+Ensure that the product is no longer visible in the product listing and cart after deletion.
