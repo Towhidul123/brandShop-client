@@ -25,12 +25,13 @@ const NavBar = () => {
             <>
                 <li><NavLink className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-red-600 underline" : ""
-                } to='/profile'>Profile</NavLink></li>
-
-
+                } to='/addProduct'>Add Product</NavLink></li>
+                
                 <li><NavLink className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-red-600 underline" : ""
-                } to='/about'>About Us</NavLink></li>
+                } to='/cart'>Cart</NavLink></li>
+
+              
 
 
             </>
@@ -51,8 +52,8 @@ const NavBar = () => {
                             {links}
                         </ul>
                     </div>
-                    <img src="/src/assets/react.svg" alt="logo-ct" className="w-10" />
-                    <h2 className="font-cust font-bold text-xl">Harmony Haven </h2>
+                    <img src="https://i.ibb.co/hVTyJh0/images.png" alt="logo-ct" className="w-10" />
+                    <h2 className="font-cust font-bold text-xl">GrabCar </h2>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

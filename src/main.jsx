@@ -15,6 +15,13 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import AuthProvider from './Components/AuthProvider';
+import PrivateRoute from './Components/PrivateRoute';
+import BrandCard from './Components/BrandCard';
+import AddMainPageProduct from './Components/AddMainPageProduct';
+import MainPageCard from './Components/MainPageCard';
+import Products from './Components/Products';
+import ProductDetail from './Components/ProductDetail';
+import Cart from './Components/Cart';
 
 const router = createBrowserRouter([
   {
@@ -27,13 +34,34 @@ const router = createBrowserRouter([
         element: <Home></Home>
 
       },
-
       {
-        path: "addProduct",
-        element: <AddProducts></AddProducts>,
+        path: '/products/:brandName',
+        element: <Products></Products>,
+        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.brandName}`)
       },
       {
-        path: "Update",
+        path: '/product/:productId',
+        element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.productId}`)
+      },
+      {
+        path:'/cart',
+        element:<PrivateRoute><Cart></Cart></PrivateRoute>
+      },
+
+      {
+        path: "/addProduct",
+        element: <PrivateRoute><AddProducts></AddProducts></PrivateRoute>,
+      },
+
+      //bakayaro page
+      {
+        path: "mainPageProduct",
+        element: <AddMainPageProduct></AddMainPageProduct>
+      },
+
+      {
+        path: "/Update",
         element: <Update></Update>,
       },
       {
