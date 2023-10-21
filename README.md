@@ -28,5 +28,4 @@ Allow authorized users  to remove products from the inventory.
 Implement confirmation dialogs or prompts to prevent accidental deletions.
 Ensure that the product is no longer visible in the product listing and cart after deletion.
 
-
 Live link- https://ass-10-62d1c.web.app/
