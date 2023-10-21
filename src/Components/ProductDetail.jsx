@@ -10,7 +10,7 @@ const ProductDetail = () => {
 
   useEffect(() => {
     console.log('Fetching data for productId:', productId);
-    fetch(`http://localhost:5000/product/${productId}`)
+    fetch(`https://brand-shop-server-zeta-eight.vercel.app/product/${productId}`)
       .then(res => res.json())
       .then(data => setProduct(data))
       .catch(error => console.error('Error fetching data:', error));
@@ -28,7 +28,7 @@ const ProductDetail = () => {
 
 
   const handleAddToCart = () => {
-    fetch("http://localhost:5000/addToCart", {
+    fetch("https://brand-shop-server-zeta-eight.vercel.app/addToCart", {
       method: "POST",
       headers: {
         "content-type": "application/json",

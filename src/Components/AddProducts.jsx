@@ -34,7 +34,7 @@ const AddProducts = () => {
 
         //send data to server
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://brand-shop-server-zeta-eight.vercel.app/product', {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

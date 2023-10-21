@@ -20,7 +20,7 @@ const CartCard = ({ card }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/addToCart/${_id}`,{
+                fetch(`https://brand-shop-server-zeta-eight.vercel.app/addToCart/${_id}`,{
                     method:'DELETE'
                 })
                     .then(res => res.json())

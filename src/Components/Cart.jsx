@@ -6,7 +6,7 @@ const Cart = () => {
     const [card, setCard] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/addToCart')
+        fetch('https://brand-shop-server-zeta-eight.vercel.app/addToCart')
             .then(res => res.json())
             .then(data => setCard(data))
             .catch(error => console.error('Error fetching data:', error));

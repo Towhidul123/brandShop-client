@@ -37,12 +37,12 @@ const router = createBrowserRouter([
       {
         path: '/products/:brandName',
         element: <Products></Products>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.brandName}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-zeta-eight.vercel.app/products/${params.brandName}`)
       },
       {
         path: '/product/:productId',
         element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.productId}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-zeta-eight.vercel.app/product/${params.productId}`)
       },
       {
         path:'/cart',
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <Update></Update>,
-        loader:({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+        loader:({params}) => fetch(`https://brand-shop-server-zeta-eight.vercel.app/product/${params.id}`)
       },
       {
         path: '/login',

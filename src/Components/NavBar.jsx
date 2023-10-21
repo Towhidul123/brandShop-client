@@ -31,7 +31,7 @@ const NavBar = ({ toggleTheme }) => {
 
                 <li><NavLink className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-red-600 underline" : ""
-                } to='/cart'>Cart</NavLink></li>
+                } to='/cart'>My Cart</NavLink></li>
 
 
 

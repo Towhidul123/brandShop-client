@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
     const { _id, image, name, BrandName, Type, Price, rating } = product;
 
-  
+ 
 
     return (
 

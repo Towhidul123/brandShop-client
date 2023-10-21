@@ -15,13 +15,13 @@ const Products = () => {
 
     useEffect(() => {
         console.log(brandName);
-        fetch(`http://localhost:5000/products/${brandName}`)
+        fetch(`https://brand-shop-server-zeta-eight.vercel.app/products/${brandName}`)
             .then(res => res.json())
             .then(data => setProducts(data))
             .catch(error => console.error('Error fetching data:', error));
     }, [brandName]);
     
-
+    console.log(products);
     return (
 
         <div className="relative product-list ">
@@ -39,15 +39,17 @@ const Products = () => {
             </div>
 
           
-
-
-
             <h1 className='text-center my-8 text-lg font-semibold'>Products <br /> for <br />{brandName}</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-4">
-                {products.map(product => (
-                    <ProductCard key={product._id} product={product} />
-                ))}
-            </div>
+            
+            {products.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                    {products.map(product => (
+                        <ProductCard key={product._id} product={product} />
+                    ))}
+                </div>
+            ) : (
+                <p className="text-center">Sorry, there are no products.</p>
+            )}
         </div>
     );
 };

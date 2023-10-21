@@ -9,7 +9,7 @@ const MainPageCard = () => {
     const [card, setCard] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/mainPageProduct')
+        fetch('https://brand-shop-server-zeta-eight.vercel.app/mainPageProduct')
             .then(res => res.json())
             .then(data => setCard(data))
             .catch(error => console.error('Error fetching data:', error));
