@@ -15,7 +15,6 @@ Calculate and display the total cost of the items in the cart.
 
 - User Authentication and Authorization:
 Implement user registration and login functionalities.
-
 Define user roles  and implement role-based access control for certain functionalities (e.g., product update/delete).
 
 - Product Update:
