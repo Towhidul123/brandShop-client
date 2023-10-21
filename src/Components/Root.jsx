@@ -5,10 +5,16 @@ import Footer from "./Footer";
 
 
 const Root = () => {
-    return (
-        <div>
 
-            <NavBar></NavBar>
+    const toggleTheme = () =>{
+        document.documentElement.classList.toggle("dark")
+    }
+
+
+    return (
+        <div className="bg-white dark:bg-gray-600">
+
+            <NavBar toggleTheme={toggleTheme}></NavBar>
          
             <div >
                 <Outlet></Outlet>

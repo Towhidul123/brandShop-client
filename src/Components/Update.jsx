@@ -1,5 +1,5 @@
 import { Rating } from "@material-tailwind/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 
@@ -7,7 +7,9 @@ import { useLoaderData } from "react-router-dom";
 const Update = () => {
 
    
-    const [rateing, setRating] = useState(0);
+    const [rating, setRating] = useState(0);
+
+    
 
     const handleRatingChange = (value) => {
         setRating(value);
@@ -50,9 +52,11 @@ const Update = () => {
 
     const product = useLoaderData();
 
-    const { _id, image, name, BrandName, Type, Price, rating  } = product;
-
-  
+    const { _id, image, name, BrandName, Type, Price,  rating: initialRating } = product;
+    useEffect(() => {
+        // Set the initial rating value when the component mounts
+        setRating(initialRating);
+    }, [initialRating]); // Only re-run this effect if initialRating changes
 
     return (
        
@@ -86,7 +90,7 @@ const Update = () => {
                
 
                 <div className="relative z-0 w-full mb-6 group">
-                    <Rating name="rating"defaultValue={rating} value={rateing} onChange={handleRatingChange} />
+                <Rating name="rating" defaultValue={rating} value={rating} onChange={handleRatingChange}  />
 
                 </div>
 

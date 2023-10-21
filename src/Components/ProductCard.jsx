@@ -33,7 +33,7 @@ const ProductCard = ({ product }) => {
                         ${Price}
                     </p>
                     <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                    <Rating name="rating" value={rating}  />
+                    <Rating name="rating" value={rating} readonly />
                     </p>
                 </div>
 

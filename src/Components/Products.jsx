@@ -24,10 +24,10 @@ const Products = () => {
 
     return (
 
-        <div className="relative product-list">
+        <div className="relative product-list ">
 
-            <div className=''>
-                <AutoplaySlider
+            <div className='flex justify-center w-full aspect-video max-h-[600px] py-5'>
+                <AutoplaySlider 
                     play={true}
                     cancelOnInteraction={false} // should stop playing on user interaction
                     interval={6000}

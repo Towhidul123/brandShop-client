@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
+import ThemeToggle from "./ThemeToggle";
 
 
 
 
-const NavBar = () => {
+
+const NavBar = ({ toggleTheme }) => {
 
     const { user, logOut } = useContext(AuthContext)
 
@@ -26,12 +28,12 @@ const NavBar = () => {
                 <li><NavLink className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-red-600 underline" : ""
                 } to='/addProduct'>Add Product</NavLink></li>
-                
+
                 <li><NavLink className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-red-600 underline" : ""
                 } to='/cart'>Cart</NavLink></li>
 
-              
+
 
 
             </>
@@ -42,6 +44,8 @@ const NavBar = () => {
 
     return (
         <div>
+
+
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -52,14 +56,23 @@ const NavBar = () => {
                             {links}
                         </ul>
                     </div>
-                    <img src="https://i.ibb.co/hVTyJh0/images.png" alt="logo-ct" className="w-10" />
-                    <h2 className="font-cust font-bold text-xl">GrabCar </h2>
+                    <div className="flex flex-col md:flex-row ">
+                        <img src="https://i.ibb.co/hVTyJh0/images.png" alt="logo-ct" className="w-10" />
+                        <h2 className="font-cust font-bold text-xl">GrabCar </h2>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {links}
                     </ul>
                 </div>
+
+             
+                  <button className="btn" onClick={toggleTheme}> Dark/light  </button>
+                    
+
+
+             
 
                 <div className="navbar-end">
                     {
@@ -71,7 +84,7 @@ const NavBar = () => {
                                     alt="Image placeholder"
                                     src={user.photoURL}
                                 />
-                                 <h2>{user.displayName}</h2>
+                                <h2>{user.displayName}</h2>
                             </div>
                             <button className="btn" onClick={handleLogOut}>Sign Out</button>
                         </>

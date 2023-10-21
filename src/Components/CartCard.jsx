@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const CartCard = ({ card }) => {
-
+    
     const { _id, name, BrandName, Type, Price, ShortDescription, rating, image } = card;
 
     const handleDelete = _id => {
+        console.log(card);
         console.log(_id);
         Swal.fire({
             title: 'Are you sure?',

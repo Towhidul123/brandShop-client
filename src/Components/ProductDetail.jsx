@@ -20,20 +20,27 @@ const ProductDetail = () => {
     return <div>Loading...</div>;
   }
 
+  const{ name, BrandName, Type, Price, ShortDescription, LongDescription, rating, image} = product;
+  const productCart = {name, BrandName, Type, Price, ShortDescription, LongDescription, rating, image}
+
+  console.log(product);
+  console.log(productCart);
+
+
   const handleAddToCart = () => {
-    fetch(`http://localhost:5000/addToCart`, {
-      method: 'POST',
+    fetch("http://localhost:5000/addToCart", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "content-type": "application/json",
       },
-      body: JSON.stringify({ product }),
+      body: JSON.stringify(productCart),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        toast.success('Successfully Added!');
-      })
-      .catch((error) => console.error('Error adding to cart:', error));
+        if (data.insertedId) {
+          toast.success('Successfully Added!');
+        }
+      });
   };
 
 
