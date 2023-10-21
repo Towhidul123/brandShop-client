@@ -54,7 +54,7 @@ const AddProducts = () => {
 
 
     return (
-        <div>
+        <div className="container mx-auto my-40 mt-12 border-2 rounded-lg ">
             <Toaster position="top-right" reverseOrder={false}
             />  <form onSubmit={handleAdd}>
                 <div className="relative z-0 w-full mb-6 group">

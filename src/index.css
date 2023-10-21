@@ -1,3 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,3 +12,11 @@
 .display-none{
     @apply hidden;
 }
+
+
+#root{
+    font-family: 'Tilt Neon', sans-serif;
+    margin: 0;
+    padding: 0;
+   
+  }

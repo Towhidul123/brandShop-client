@@ -10,7 +10,12 @@ module.exports = withMT({
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        cust: ' cursive'
+        
+      }
+    },
   },
   plugins: [require("daisyui")],
 });

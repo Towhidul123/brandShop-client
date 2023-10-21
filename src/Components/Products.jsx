@@ -39,16 +39,16 @@ const Products = () => {
             </div>
 
           
-            <h1 className='text-center my-8 text-lg font-semibold'>Products <br /> for <br />{brandName}</h1>
+            <h1 className='bg-blue-gray-800 text-center my-8 text-lg font-semibold py-10'><span className='text-2xl'>Products</span> <br /> for <br /><span className='text-4xl'>{brandName}</span></h1>
             
             {products.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 " data-aos="fade-up">
                     {products.map(product => (
                         <ProductCard key={product._id} product={product} />
                     ))}
                 </div>
             ) : (
-                <p className="text-center">Sorry, there are no products.</p>
+                <p className="text-center font-bold text-8xl h-screen flex items-center justify-center">Sorry, there are no products.</p>
             )}
         </div>
     );

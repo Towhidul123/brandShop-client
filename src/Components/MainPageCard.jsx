@@ -19,8 +19,8 @@ const MainPageCard = () => {
 
         <div>
             <h2 className="font-semibold text-4xl my-8 text-center">Types of car we have</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"  data-aos="fade-up">
+                    
                 {
                     card.map(card => <BrandCard key={card._id} card={card}></BrandCard>)
                 }

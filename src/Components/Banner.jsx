@@ -10,8 +10,8 @@ const Banner = () => {
                 ]}
                 className="w-full h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] object-cover"
             >
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <h1 className="text-center text-5xl text-white font-thin">Drive in Style <br /> with <br />GrabCar</h1>
+                <div className="absolute inset-0 flex  justify-center">
+                    <h1 className="text-center text-5xl  font-thin  text-[#1F2937]">Drive in Style <br /> with <br /><span className="font-cust">GrabCar</span></h1>
                 </div>
             </ParallaxBanner>
         </div>
