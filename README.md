@@ -1,6 +1,6 @@
-# React + Vite
 
-5 notable things about the project are:
+
+# 5 notable things about the project are:
 
 - Product Listing Page
 Display a list of available products with details (name, price, image, etc.).
