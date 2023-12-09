@@ -27,4 +27,13 @@ Allow authorized users  to remove products from the inventory.
 Implement confirmation dialogs or prompts to prevent accidental deletions.
 Ensure that the product is no longer visible in the product listing and cart after deletion.
 
+# Technologies used:
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=firebase,mongodb,react,tailwind,express,nodejs&perline=8" />
+  </a>
+</p>
+
+
+
 Live link- https://ass-10-62d1c.web.app/
